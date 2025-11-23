@@ -135,7 +135,7 @@
                     <tr>
                         <th> Kepada </th>
                         <td class="colon"> : </td>
-                        <td>
+                        <td class="kepada">
                             <ol>
                                 <?php if ($jumlah_peserta['jumlah_peserta'] <= 3): ?>
                                     <?php foreach ($peserta as $p): ?>

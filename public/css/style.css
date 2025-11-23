@@ -114,6 +114,11 @@
   font-weight: 400;
 }
 
+.kepada table th {
+  width: 7rem;
+  font-weight: 400;
+}
+
 .colon {
   width: 0.25rem;
   vertical-align: top;

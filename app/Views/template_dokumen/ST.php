@@ -105,6 +105,11 @@
             margin-bottom: 1rem;
         } */
 
+        .kepada table th {
+            width: 7rem;
+            font-weight: 400;
+        }
+
         .untuk li {
             text-align: justify;
             margin-bottom: 0;
