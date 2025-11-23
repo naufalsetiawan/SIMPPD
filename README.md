@@ -117,8 +117,3 @@ Akses melalui browser:
 ```
 http://localhost:8080
 ```
-
----
-
-## Selesai 🎉
-Project siap dijalankan dan dikembangkan lebih lanjut.
