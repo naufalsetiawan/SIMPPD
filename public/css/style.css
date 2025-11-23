@@ -1,0 +1,203 @@
+@import "tailwindcss";
+/* @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+// <weight>: Use a value from 200 to 800
+// <uniquifier>: Use a unique and descriptive class name
+
+.plus-jakarta-sans {
+  font-family: "Plus Jakarta Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+.draggable-row {
+  cursor: grab;
+  user-select: none;
+}
+
+.draggable-row:active {
+  cursor: grabbing;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.a4-page {
+  width: 210mm;
+  /* Set fixed width */
+
+  min-width: 210mm;
+  /* Prevent shrinking below 210mm */
+  background: white;
+  padding: 16mm;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  /* Prevent shrinking in a flex container */
+  flex-shrink: 0;
+
+  /* Optional: If used in flex or grid, ensure proper alignment */
+  display: block;
+  /* Prevent potential flex behaviors */
+  margin-bottom: 0;
+  /* Remove any bottom margin */
+  padding-bottom: 0;
+  /* Remove any bottom padding */
+}
+.ST {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  width: 210mm;
+  padding: 20mm;
+  min-width: 210mm;
+}
+
+.ST table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ST th,
+.ST td {
+  border: 1px solid #000;
+  padding: 5px;
+  text-align: left;
+}
+
+.ST thead {
+  display: table-row-group;
+}
+
+.ST tr {
+  page-break-inside: avoid;
+}
+
+.secHead u,
+.secHead span {
+  font-weight: 700;
+  display: block;
+  text-align: center;
+}
+
+.secHead {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  /* 8px */
+  margin-bottom: 0.5rem;
+}
+
+.noSurat span {
+  font-weight: 400;
+  display: block;
+  text-align: center;
+}
+
+.content > table,
+.content > table th,
+.content > table td {
+  border: none;
+  padding: 0;
+}
+
+.content th {
+  vertical-align: top;
+  text-align: left;
+}
+
+.content table th {
+  width: 4.25rem;
+  font-weight: 400;
+}
+
+.colon {
+  width: 0.25rem;
+  vertical-align: top;
+}
+.content ol {
+  list-style-type: decimal;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.menimbang ol {
+  list-style-type: lower-alpha;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.content ol {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.content li {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.untuk li {
+  text-align: justify;
+  margin-bottom: 0;
+}
+
+.ST .untuk table th {
+  width: 8rem;
+  font-weight: 400;
+}
+
+.untuk table tr td:nth-child(2) {
+  width: 0.25rem;
+  vertical-align: top;
+}
+
+.closing {
+  display: block;
+  text-align: justify;
+}
+
+.sign .sign th,
+.sign td,
+.lampHead th,
+.lampHead td {
+  border: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.sign td,
+.lampHead td {
+  width: 50%;
+}
+
+.sign span {
+  display: block;
+  text-align: center;
+}
+
+.lampHead span {
+  display: block;
+  text-align: left;
+}
+
+.lampiran {
+  page-break-before: always;
+}
+
+.peserta th,
+.peserta td {
+  text-align: center;
+}
+
+.untuk {
+  list-style-type: decimal;
+}
+
+.untuk table th {
+  width: 10rem;
+  font-weight: 400;
+}
