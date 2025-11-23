@@ -1,68 +1,94 @@
-# CodeIgniter 4 Application Starter
+SIMPPD — Sistem Informasi Manajemen Pengawasan Perjalanan Dinas
 
-## What is CodeIgniter?
+Sistem berbasis CodeIgniter 4 untuk mengelola pengawasan perjalanan dinas secara terstruktur, modern, dan mudah digunakan.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Requirements
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+CodeIgniter 4
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+PHP 8.1+
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Composer
 
-## Installation & updates
+MySQL / MariaDB
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+TailwindCSS 4 (CLI)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Node.js + npm
 
-## Setup
+XAMPP (Apache + MySQL)
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Installation Guide
+1. Clone Repository
 
-## Important Change with index.php
+Via Git
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+cd C:\xampp\htdocs
+git clone https://github.com/naufalsetiawan/SIMPPD
+cd SIMPPD
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Atau Upload Manual
 
-## Repository Management
+Download ZIP dari GitHub
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Extract ke: C:\xampp\htdocs\SIMPPD
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+2. Install PHP Dependencies (Composer)
+composer install
 
-## Server Requirements
+3. Install Frontend Dependencies
+npm install
+npm run build
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+4. Copy & Konfigurasi File .env
+cp env .env
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+Kemudian edit .env:
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+CI_ENVIRONMENT = development
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+database.default.hostname = localhost
+database.default.database = nama_database
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+
+5. Migrasi Database
+php spark migrate
+
+
+Jika menggunakan seeder:
+
+php spark db:seed NamaSeeder
+
+Catatan Keamanan (PENTING!)
+
+Seeder akan membuat akun admin default dengan username dan password bawaan.
+
+👉 Sebelum menjalankan seeder, ubah password admin default terlebih dahulu.
+
+Buka file seeder:
+app/Database/Seeds/AdminSeeder.php
+
+Cari bagian berikut:
+'username' => 'admin',
+'password' => password_hash('admin123', PASSWORD_DEFAULT),
+'id_pegawai' => NULL,
+'created_at' => $currentTimestamp,
+
+Ubah menjadi:
+'password' => password_hash('password_baru_anda', PASSWORD_DEFAULT),
+
+
+⚠️ Sangat disarankan mengganti password sebelum seeding
+karena akun admin biasanya hanya satu dan tidak ada halaman GUI untuk manajemen admin.
+
+6. Jalankan Project
+php spark serve
+
+
+Akses melalui browser:
+
+http://localhost:8080
