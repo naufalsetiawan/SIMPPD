@@ -45,6 +45,10 @@ composer install
 npm install
 npm run build
 ```
+Untuk mode development
+```bash
+npm run dev
+```
 
 ---
 
@@ -117,3 +121,11 @@ Akses melalui browser:
 ```
 http://localhost:8080
 ```
+
+## 7, Lampiran
+
+- **Flowchart + Panduan Pengguna (PDF)** — 
+- **Template CSV Pegawai** — https://drive.google.com/file/d/1cK40atDtofidZO9b5VnuJyfx8k6Lsyoa/view?usp=sharing
+- **CSV Provinsi** — https://drive.google.com/file/d/1jYid6JMtIua7YZPoZzitW9u3P8Kk7NV2/view?usp=sharing
+- **CSV Kota** — https://drive.google.com/file/d/1A5OOoSgOFDpW7RwGtVvF7l7_B72ggXHn/view?usp=sharing
+
